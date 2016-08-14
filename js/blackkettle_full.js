@@ -7,4 +7,8 @@ jQuery(document).ready(function (i) {
         Supporter: 'Tara Dunn'
     }
 
+    //jQuery(function() {
+        jQuery("#tabs").tabs();
+    //});
+
 });

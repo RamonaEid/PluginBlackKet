@@ -4,7 +4,7 @@
 Plugin Name: Blackkettle Ranch Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/Bio.html
 Description: Do NOT deactivate or delete.  Necessary plugin for Blackkettle Ranch functionality.
-Version: 0.0.1
+Version: 0.0.2
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/Bio.html
 License: GPL2
@@ -34,8 +34,9 @@ function blackkettle_init() {
     include( plugin_dir_path(__FILE__) . 'admin/blackkettle-admin.php' );
     
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
-    wp_register_script( 'blackkettle-full', plugins_url('js/blackkettle_full.js', __FILE__), array('jquery'), '081316', true );
-    
+    wp_register_script( 'blackkettle-full', plugins_url('js/blackkettle_full.js', __FILE__), array('jquery'), '081316b', true );
+    wp_register_script( 'jquery-ui-tabs', '/wp-includes/js/jquery/ui/jquery.ui.tabs.min.js', array('jquery') );
+
     add_action( 'wp_enqueue_scripts', 'blackkettle_enqueue_scripts' );
     add_action( 'wp_enqueue_scripts', 'blackkettle_check_unsemantic', 99999 );
     add_action( 'wp_enqueue_scripts', 'blackkettle_check_fontawesome', 99999 );
@@ -67,8 +68,12 @@ function blackkettle_init() {
 }
 
 function blackkettle_enqueue_scripts() {
+    wp_enqueue_style( 'jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css' );
+    //https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+    //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer ); $handle(reuired) > all others optiuonal
+    wp_enqueue_script( 'jquery-ui-tabs', array('jquery') );
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-    wp_enqueue_script( 'blackkettle-full', plugins_url('js/blackkettle_full.js', __FILE__), array('jquery'), '081316', true );
+    wp_enqueue_script( 'blackkettle-full', plugins_url('js/blackkettle_full.js', __FILE__), array('jquery'), '081316b', true );
 
 
 }
