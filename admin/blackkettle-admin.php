@@ -22,5 +22,11 @@ function blackkettle_check_fontawesome() {
     }
 }
 
+function custom_upload_mimes ( $existing_mimes=array() ) {
+	// add your extension to the array
+	$existing_mimes['vcf'] = 'text/x-vcard';
+	return $existing_mimes;
+}
+
 
 ?>

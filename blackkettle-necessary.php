@@ -4,7 +4,7 @@
 Plugin Name: Blackkettle Ranch Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/Bio.html
 Description: Do NOT deactivate or delete.  Necessary plugin for Blackkettle Ranch functionality.
-Version: 0.0.4
+Version: 0.0.5
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/Bio.html
 License: GPL2
@@ -41,6 +41,8 @@ function blackkettle_init() {
     add_action( 'wp_enqueue_scripts', 'blackkettle_check_unsemantic', 99999 );
     add_action( 'wp_enqueue_scripts', 'blackkettle_check_fontawesome', 99999 );
 
+    add_filter('upload_mimes', 'custom_upload_mimes');
+    
     include_once( 'github-plugin-updater/updater.php' );
 
     define( 'WP_GITHUB_FORCE_UPDATE', true );
