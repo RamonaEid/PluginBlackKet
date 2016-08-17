@@ -7,6 +7,10 @@ jQuery(document).ready(function (i) {
         Supporter: 'Tara Dunn'
     }
 
+
+    // ================================================================================
+    // Begin Code
+    // ================================================================================
     // Customizer is Incompatible with jQuery UI Tabs.
     //https://core.trac.wordpress.org/ticket/23225 (punted from 4.6 to Future Release)
     //https://bugs.jqueryui.com/ticket/8637
@@ -19,12 +23,15 @@ jQuery(document).ready(function (i) {
         });
         jQuery(this).__tabs(a, b, c, d, e, f);
     };
-
-
-
-    //jQuery(function() {
     jQuery("#tabs").tabs();
-    //});
+    // ================================================================================
+    // End Code
+    // ================================================================================
 
+
+    // Highlight the first Item every page - Secondary Navigation Menu
+    if (window.location.pathname != '/') {
+        jQuery('ul.secondary-menu li:first-of-type').addClass('current-menu-item');
+    }
 
 });
