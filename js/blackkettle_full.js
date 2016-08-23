@@ -34,4 +34,11 @@ jQuery(document).ready(function (i) {
         jQuery('ul.secondary-menu li:first-of-type').addClass('current-menu-item');
     }
 
+    // From Tom Usborne 08/21/2016 7:16 PM
+    var isWindowsPhone = /windows phone/i.test(navigator.userAgent.toLowerCase());
+    var instance = jQuery('.generate-page-header-video').data('vide');
+    if (isWindowsPhone) {
+        instance.destroy();
+    }
+
 });
