@@ -1,7 +1,7 @@
 <?php
 
-function form_create_mailchimp() {
-$form_string = '<div class="mailchimpform">
+function create_blackkettle_form() {
+return '<div class="mailchimpform">
     <form id="mc-embedded-subscribe-form" class="validate" action="http://blackkettleranch.us3.list-manage2.com/subscribe/post?u=bce96288a959436a667b70b31&amp;id=d51b31a093" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
         <h3><span style="color: #660000;">Subscribe to our newsletter</span></h3>
         <div class="mc-field-group">
@@ -26,7 +26,6 @@ $form_string = '<div class="mailchimpform">
     </form>
 </div>';
 
-return $form_string;
 }
 
 ?>
