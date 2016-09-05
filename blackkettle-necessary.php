@@ -4,7 +4,7 @@
 Plugin Name: Blackkettle Ranch Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/Bio.html
 Description: Do NOT deactivate or delete.  Necessary plugin for Tina Huston's Websites functionality.
-Version: 0.0.9
+Version: 0.0.10
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/Bio.html
 License: GPL2
@@ -44,6 +44,7 @@ function blackkettle_init() {
     add_action( 'wp_enqueue_scripts', 'blackkettle_check_fontawesome', 99999 );
 
     add_shortcode('black-kettle-form', 'create_blackkettle_form');
+    add_shortcode('black-kettle-facebook', 'create_blackkettle_facebook');
 
     add_filter('upload_mimes', 'custom_upload_mimes');
     
